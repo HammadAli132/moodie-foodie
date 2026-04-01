@@ -1,0 +1,107 @@
+[
+  {
+    "restaurant": "Cheezious",
+    "link": "https://www.foodpanda.pk/restaurant/v3mx/cheezious-f-10-markaz",
+    "dishes": [
+      {
+        "name": "Crown Crust Pizza",
+        "tags": ["comfort", "heavy", "sharing", "cheap"],
+        "price_range": "low"
+      },
+      {
+        "name": "Behari Roll",
+        "tags": ["spicy", "quick", "savory", "filling"],
+        "price_range": "low"
+      },
+      {
+        "name": "Bazinga Burger",
+        "tags": ["filling", "trendy", "savory"],
+        "price_range": "low"
+      }
+    ]
+  },
+  {
+    "restaurant": "McDonald's",
+    "link": "https://www.foodpanda.pk/restaurant/s4bn/mcdonalds-f-7-markaz",
+    "dishes": [
+      {
+        "name": "Big Mac",
+        "tags": ["comfort", "filling", "savory"],
+        "price_range": "medium"
+      },
+      {
+        "name": "McSpicy Burger",
+        "tags": ["spicy", "quick", "savory"],
+        "price_range": "medium"
+      },
+      {
+        "name": "Chicken McNuggets",
+        "tags": ["quick", "sharing", "comfort"],
+        "price_range": "low"
+      }
+    ]
+  },
+  {
+    "restaurant": "Cafe Rustic",
+    "link": "https://www.foodpanda.pk/restaurant/cafe-rustic-islamabad",
+    "dishes": [
+      {
+        "name": "Nutella Crepes",
+        "tags": ["sweet", "cozy", "premium", "comfort"],
+        "price_range": "medium"
+      },
+      {
+        "name": "Chicken Alfredo Pasta",
+        "tags": ["comfort", "heavy", "cozy", "savory"],
+        "price_range": "medium"
+      },
+      {
+        "name": "Iced Matcha Latte",
+        "tags": ["light", "trendy", "cozy"],
+        "price_range": "medium"
+      }
+    ]
+  },
+  {
+    "restaurant": "Monal",
+    "link": "https://www.foodpanda.pk/restaurant/monal-islamabad",
+    "dishes": [
+      {
+        "name": "Karahi Gosht",
+        "tags": ["spicy", "heavy", "premium", "sharing", "savory"],
+        "price_range": "high"
+      },
+      {
+        "name": "Chicken Tikka",
+        "tags": ["spicy", "premium", "savory", "sharing"],
+        "price_range": "high"
+      },
+      {
+        "name": "Daal Makhani",
+        "tags": ["comfort", "cozy", "savory", "filling"],
+        "price_range": "medium"
+      }
+    ]
+  },
+  {
+    "restaurant": "Howdy",
+    "link": "https://www.foodpanda.pk/restaurant/howdy-islamabad",
+    "dishes": [
+      {
+        "name": "Manchurian",
+        "tags": ["spicy", "savory", "sharing", "trendy"],
+        "price_range": "medium"
+      },
+      {
+        "name": "Crispy Honey Chilli Chicken",
+        "tags": ["spicy", "sweet", "trendy", "sharing"],
+        "price_range": "medium"
+      },
+      {
+        "name": "Chow Mein",
+        "tags": ["quick", "filling", "savory", "cheap"],
+        "price_range": "low"
+      }
+    ]
+  }
+]
