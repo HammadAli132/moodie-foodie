@@ -5,15 +5,18 @@
     "dishes": [
       {
         "name": "Big Mac",
-        "tags": ["comfort", "filling", "savory"]
+        "tags": ["comfort", "filling", "savory"],
+        "price_range": "medium"
       },
       {
         "name": "McSpicy Burger",
-        "tags": ["spicy", "quick", "savory"]
+        "tags": ["spicy", "quick", "savory"],
+        "price_range": "medium"
       },
       {
         "name": "Chicken McNuggets",
-        "tags": ["quick", "sharing", "comfort"]
+        "tags": ["quick", "sharing", "comfort"],
+        "price_range": "low"
       }
     ]
   },
@@ -23,15 +26,18 @@
     "dishes": [
       {
         "name": "Zinger Burger",
-        "tags": ["spicy", "quick", "filling"]
+        "tags": ["spicy", "quick", "filling"],
+        "price_range": "low"
       },
       {
         "name": "Hot Shots",
-        "tags": ["spicy", "quick", "sharing"]
+        "tags": ["spicy", "quick", "sharing"],
+        "price_range": "low"
       },
       {
         "name": "Mighty Zinger",
-        "tags": ["heavy", "filling", "spicy"]
+        "tags": ["heavy", "filling", "spicy"],
+        "price_range": "medium"
       }
     ]
   },
@@ -41,15 +47,18 @@
     "dishes": [
       {
         "name": "Crown Crust Pizza",
-        "tags": ["comfort", "heavy", "sharing"]
+        "tags": ["comfort", "heavy", "sharing"],
+        "price_range": "low"
       },
       {
         "name": "Behari Roll",
-        "tags": ["spicy", "quick", "savory"]
+        "tags": ["spicy", "quick", "savory"],
+        "price_range": "low"
       },
       {
         "name": "Bazinga Burger",
-        "tags": ["filling", "trendy", "savory"]
+        "tags": ["filling", "trendy", "savory"],
+        "price_range": "low"
       }
     ]
   },
@@ -59,15 +68,18 @@
     "dishes": [
       {
         "name": "GMC Burger",
-        "tags": ["filling", "heavy", "savory"]
+        "tags": ["filling", "heavy", "savory"],
+        "price_range": "low"
       },
       {
         "name": "Masala Fries",
-        "tags": ["spicy", "quick", "sharing"]
+        "tags": ["spicy", "quick", "sharing"],
+        "price_range": "low"
       },
       {
         "name": "Zingers",
-        "tags": ["quick", "savory", "cheap"]
+        "tags": ["quick", "savory", "cheap"],
+        "price_range": "low"
       }
     ]
   },
@@ -77,15 +89,18 @@
     "dishes": [
       {
         "name": "Son of a Bun",
-        "tags": ["premium", "heavy", "filling"]
+        "tags": ["premium", "heavy", "filling"],
+        "price_range": "high"
       },
       {
         "name": "Steak 'n' Cheese",
-        "tags": ["savory", "premium", "cozy"]
+        "tags": ["savory", "premium", "cozy"],
+        "price_range": "high"
       },
       {
         "name": "Curly Fries",
-        "tags": ["quick", "sharing", "comfort"]
+        "tags": ["quick", "sharing", "comfort"],
+        "price_range": "medium"
       }
     ]
   },
@@ -95,15 +110,18 @@
     "dishes": [
       {
         "name": "Big Bang Burger",
-        "tags": ["heavy", "filling", "trendy"]
+        "tags": ["heavy", "filling", "trendy"],
+        "price_range": "medium"
       },
       {
         "name": "Prison Break Burger",
-        "tags": ["filling", "savory", "heavy"]
+        "tags": ["filling", "savory", "heavy"],
+        "price_range": "medium"
       },
       {
         "name": "Loaded Fries",
-        "tags": ["sharing", "comfort", "savory"]
+        "tags": ["sharing", "comfort", "savory"],
+        "price_range": "medium"
       }
     ]
   },
@@ -113,15 +131,18 @@
     "dishes": [
       {
         "name": "The Boss Burger",
-        "tags": ["premium", "heavy", "filling"]
+        "tags": ["premium", "heavy", "filling"],
+        "price_range": "high"
       },
       {
         "name": "Doppler Burger",
-        "tags": ["trendy", "filling", "savory"]
+        "tags": ["trendy", "filling", "savory"],
+        "price_range": "high"
       },
       {
         "name": "Animal Style Fries",
-        "tags": ["heavy", "comfort", "sharing"]
+        "tags": ["heavy", "comfort", "sharing"],
+        "price_range": "medium"
       }
     ]
   },
@@ -131,15 +152,18 @@
     "dishes": [
       {
         "name": "Smokey House Burger",
-        "tags": ["premium", "savory", "cozy"]
+        "tags": ["premium", "savory", "cozy"],
+        "price_range": "high"
       },
       {
         "name": "Tangy Jalapeno Burger",
-        "tags": ["spicy", "trendy", "filling"]
+        "tags": ["spicy", "trendy", "filling"],
+        "price_range": "medium"
       },
       {
         "name": "Molten Lava Cake",
-        "tags": ["sweet", "premium", "comfort"]
+        "tags": ["sweet", "premium", "comfort"],
+        "price_range": "high"
       }
     ]
   },
@@ -149,15 +173,18 @@
     "dishes": [
       {
         "name": "TBC Classic",
-        "tags": ["savory", "quick", "comfort"]
+        "tags": ["savory", "quick", "comfort"],
+        "price_range": "medium"
       },
       {
         "name": "Belt Buster",
-        "tags": ["heavy", "filling", "premium"]
+        "tags": ["heavy", "filling", "premium"],
+        "price_range": "high"
       },
       {
         "name": "Cheese Fries",
-        "tags": ["sharing", "comfort", "heavy"]
+        "tags": ["sharing", "comfort", "heavy"],
+        "price_range": "medium"
       }
     ]
   },
@@ -167,15 +194,18 @@
     "dishes": [
       {
         "name": "Grilled Chicken Wrap",
-        "tags": ["healthy", "light", "quick"]
+        "tags": ["healthy", "light", "quick"],
+        "price_range": "medium"
       },
       {
         "name": "Falafel Wrap",
-        "tags": ["healthy", "savory", "light"]
+        "tags": ["healthy", "savory", "light"],
+        "price_range": "medium"
       },
       {
         "name": "Tandoori Wrap",
-        "tags": ["spicy", "quick", "filling"]
+        "tags": ["spicy", "quick", "filling"],
+        "price_range": "medium"
       }
     ]
   },
@@ -185,15 +215,18 @@
     "dishes": [
       {
         "name": "Chicken Pulao Kebab",
-        "tags": ["comfort", "filling", "cheap"]
+        "tags": ["comfort", "filling", "cheap"],
+        "price_range": "low"
       },
       {
         "name": "Shami Kebab",
-        "tags": ["savory", "quick", "cheap"]
+        "tags": ["savory", "quick", "cheap"],
+        "price_range": "low"
       },
       {
         "name": "Zarda",
-        "tags": ["sweet", "light", "sharing"]
+        "tags": ["sweet", "light", "sharing"],
+        "price_range": "low"
       }
     ]
   },
@@ -203,15 +236,18 @@
     "dishes": [
       {
         "name": "Chicken Karahi",
-        "tags": ["spicy", "sharing", "savory"]
+        "tags": ["spicy", "sharing", "savory"],
+        "price_range": "medium"
       },
       {
         "name": "Mutton Karahi",
-        "tags": ["heavy", "premium", "sharing"]
+        "tags": ["heavy", "premium", "sharing"],
+        "price_range": "high"
       },
       {
         "name": "Garlic Naan",
-        "tags": ["comfort", "savory", "quick"]
+        "tags": ["comfort", "savory", "quick"],
+        "price_range": "low"
       }
     ]
   },
@@ -221,15 +257,18 @@
     "dishes": [
       {
         "name": "Chicken Handi",
-        "tags": ["comfort", "filling", "sharing"]
+        "tags": ["comfort", "filling", "sharing"],
+        "price_range": "medium"
       },
       {
         "name": "Mutton Namkeen Gosht",
-        "tags": ["savory", "heavy", "premium"]
+        "tags": ["savory", "heavy", "premium"],
+        "price_range": "high"
       },
       {
         "name": "Mixed BBQ Platter",
-        "tags": ["sharing", "filling", "trendy"]
+        "tags": ["sharing", "filling", "trendy"],
+        "price_range": "high"
       }
     ]
   },
@@ -239,15 +278,18 @@
     "dishes": [
       {
         "name": "Tandoori Mixed Grill",
-        "tags": ["sharing", "spicy", "filling"]
+        "tags": ["sharing", "spicy", "filling"],
+        "price_range": "medium"
       },
       {
         "name": "Chicken Makhni",
-        "tags": ["comfort", "savory", "filling"]
+        "tags": ["comfort", "savory", "filling"],
+        "price_range": "medium"
       },
       {
         "name": "Roghnan Naan",
-        "tags": ["heavy", "savory", "cozy"]
+        "tags": ["heavy", "savory", "cozy"],
+        "price_range": "low"
       }
     ]
   },
@@ -257,15 +299,18 @@
     "dishes": [
       {
         "name": "Afghani Tikka",
-        "tags": ["savory", "filling", "premium"]
+        "tags": ["savory", "filling", "premium"],
+        "price_range": "high"
       },
       {
         "name": "Kabuli Pulao",
-        "tags": ["sweet", "comfort", "filling"]
+        "tags": ["sweet", "comfort", "filling"],
+        "price_range": "medium"
       },
       {
         "name": "Mantu",
-        "tags": ["light", "savory", "sharing"]
+        "tags": ["light", "savory", "sharing"],
+        "price_range": "medium"
       }
     ]
   },
@@ -275,33 +320,39 @@
     "dishes": [
       {
         "name": "Chicken Tikka",
-        "tags": ["spicy", "quick", "cheap"]
+        "tags": ["spicy", "quick", "cheap"],
+        "price_range": "low"
       },
       {
         "name": "Beef Seekh Kebab",
-        "tags": ["savory", "spicy", "filling"]
+        "tags": ["savory", "spicy", "filling"],
+        "price_range": "low"
       },
       {
         "name": "Malai Boti",
-        "tags": ["comfort", "savory", "light"]
+        "tags": ["comfort", "savory", "light"],
+        "price_range": "medium"
       }
     ]
   },
   {
-    "restaurant": "Chattha’s",
+    "restaurant": "Chattha's",
     "link": "https://www.foodpanda.pk/restaurant/s2ov/chatthas",
     "dishes": [
       {
         "name": "Desi Murgh Karahi",
-        "tags": ["savory", "premium", "cozy"]
+        "tags": ["savory", "premium", "cozy"],
+        "price_range": "high"
       },
       {
         "name": "Palak Paneer",
-        "tags": ["healthy", "comfort", "savory"]
+        "tags": ["healthy", "comfort", "savory"],
+        "price_range": "medium"
       },
       {
         "name": "Halwa Puri",
-        "tags": ["heavy", "sweet", "comfort"]
+        "tags": ["heavy", "sweet", "comfort"],
+        "price_range": "low"
       }
     ]
   },
@@ -311,15 +362,18 @@
     "dishes": [
       {
         "name": "Kunna Gosht",
-        "tags": ["heavy", "savory", "premium"]
+        "tags": ["heavy", "savory", "premium"],
+        "price_range": "high"
       },
       {
         "name": "Chicken Achari",
-        "tags": ["spicy", "savory", "filling"]
+        "tags": ["spicy", "savory", "filling"],
+        "price_range": "medium"
       },
       {
         "name": "Tandoori Paratha",
-        "tags": ["heavy", "comfort", "filling"]
+        "tags": ["heavy", "comfort", "filling"],
+        "price_range": "low"
       }
     ]
   },
@@ -329,15 +383,18 @@
     "dishes": [
       {
         "name": "Doodh Patti",
-        "tags": ["comfort", "cozy", "cheap"]
+        "tags": ["comfort", "cozy", "cheap"],
+        "price_range": "low"
       },
       {
         "name": "Chicken Cheese Paratha",
-        "tags": ["filling", "savory", "heavy"]
+        "tags": ["filling", "savory", "heavy"],
+        "price_range": "medium"
       },
       {
         "name": "French Toast",
-        "tags": ["sweet", "comfort", "premium"]
+        "tags": ["sweet", "comfort", "premium"],
+        "price_range": "medium"
       }
     ]
   },
@@ -347,15 +404,18 @@
     "dishes": [
       {
         "name": "Eggs Benedict",
-        "tags": ["premium", "savory", "trendy"]
+        "tags": ["premium", "savory", "trendy"],
+        "price_range": "high"
       },
       {
         "name": "Moroccan Chicken",
-        "tags": ["spicy", "filling", "savory"]
+        "tags": ["spicy", "filling", "savory"],
+        "price_range": "medium"
       },
       {
         "name": "Pancake Stack",
-        "tags": ["sweet", "comfort", "sharing"]
+        "tags": ["sweet", "comfort", "sharing"],
+        "price_range": "medium"
       }
     ]
   },
@@ -365,15 +425,18 @@
     "dishes": [
       {
         "name": "Butter Beer (Non-alcoholic)",
-        "tags": ["sweet", "trendy", "comfort"]
+        "tags": ["sweet", "trendy", "comfort"],
+        "price_range": "medium"
       },
       {
-        "name": "Dragon’s Breath Burger",
-        "tags": ["spicy", "heavy", "savory"]
+        "name": "Dragon's Breath Burger",
+        "tags": ["spicy", "heavy", "savory"],
+        "price_range": "high"
       },
       {
-        "name": "Wizard’s Wings",
-        "tags": ["savory", "quick", "sharing"]
+        "name": "Wizard's Wings",
+        "tags": ["savory", "quick", "sharing"],
+        "price_range": "medium"
       }
     ]
   },
@@ -383,19 +446,23 @@
     "dishes": [
       {
         "name": "Fudge Brownie",
-        "tags": ["sweet", "comfort", "quick"]
+        "tags": ["sweet", "comfort", "quick"],
+        "price_range": "medium"
       },
       {
         "name": "Club Sandwich",
-        "tags": ["filling", "savory", "quick"]
+        "tags": ["filling", "savory", "quick"],
+        "price_range": "medium"
       },
       {
         "name": "Chocolate Heaven Cake",
-        "tags": ["sweet", "heavy", "premium"]
+        "tags": ["sweet", "heavy", "premium"],
+        "price_range": "high"
       },
       {
         "name": "Cheesecake Slice",
-        "tags": ["sweet", "filling", "premium"]
+        "tags": ["sweet", "filling", "premium"],
+        "price_range": "high"
       }
     ]
   },
@@ -405,15 +472,18 @@
     "dishes": [
       {
         "name": "High Tea Platter",
-        "tags": ["sharing", "premium", "sweet"]
+        "tags": ["sharing", "premium", "sweet"],
+        "price_range": "high"
       },
       {
         "name": "Chicken Pot Pie",
-        "tags": ["comfort", "cozy", "filling"]
+        "tags": ["comfort", "cozy", "filling"],
+        "price_range": "medium"
       },
       {
         "name": "Victoria Sponge Cake",
-        "tags": ["sweet", "light", "premium"]
+        "tags": ["sweet", "light", "premium"],
+        "price_range": "high"
       }
     ]
   },
@@ -423,15 +493,18 @@
     "dishes": [
       {
         "name": "Caramel Corretto",
-        "tags": ["sweet", "comfort", "quick"]
+        "tags": ["sweet", "comfort", "quick"],
+        "price_range": "medium"
       },
       {
         "name": "Vanilla Bean Latte",
-        "tags": ["light", "sweet", "cozy"]
+        "tags": ["light", "sweet", "cozy"],
+        "price_range": "medium"
       },
       {
         "name": "Cheese Croissant",
-        "tags": ["savory", "quick", "light"]
+        "tags": ["savory", "quick", "light"],
+        "price_range": "low"
       }
     ]
   },
@@ -441,15 +514,18 @@
     "dishes": [
       {
         "name": "Ice Blended Coffee",
-        "tags": ["sweet", "trendy", "quick"]
+        "tags": ["sweet", "trendy", "quick"],
+        "price_range": "medium"
       },
       {
         "name": "Chicago Cheesecake",
-        "tags": ["sweet", "heavy", "premium"]
+        "tags": ["sweet", "heavy", "premium"],
+        "price_range": "high"
       },
       {
         "name": "Breakfast Bagel",
-        "tags": ["savory", "filling", "quick"]
+        "tags": ["savory", "filling", "quick"],
+        "price_range": "medium"
       }
     ]
   },
@@ -459,15 +535,18 @@
     "dishes": [
       {
         "name": "Soft Serve Ice Cream",
-        "tags": ["sweet", "quick", "cheap"]
+        "tags": ["sweet", "quick", "cheap"],
+        "price_range": "low"
       },
       {
         "name": "Dipped Cones",
-        "tags": ["sweet", "trendy", "quick"]
+        "tags": ["sweet", "trendy", "quick"],
+        "price_range": "low"
       },
       {
         "name": "Ice Cream Sundae",
-        "tags": ["sweet", "comfort", "sharing"]
+        "tags": ["sweet", "comfort", "sharing"],
+        "price_range": "low"
       }
     ]
   },
@@ -477,15 +556,18 @@
     "dishes": [
       {
         "name": "Pralines 'n Cream Scoop",
-        "tags": ["sweet", "premium", "comfort"]
+        "tags": ["sweet", "premium", "comfort"],
+        "price_range": "medium"
       },
       {
         "name": "Chocolate Mousse Royale",
-        "tags": ["sweet", "heavy", "savory"]
+        "tags": ["sweet", "heavy", "savory"],
+        "price_range": "medium"
       },
       {
         "name": "Milkshake",
-        "tags": ["sweet", "filling", "quick"]
+        "tags": ["sweet", "filling", "quick"],
+        "price_range": "medium"
       }
     ]
   },
@@ -495,15 +577,18 @@
     "dishes": [
       {
         "name": "Chocolate Chip Cookie with Ice Cream",
-        "tags": ["sweet", "heavy", "cozy"]
+        "tags": ["sweet", "heavy", "cozy"],
+        "price_range": "medium"
       },
       {
         "name": "Brownie Explosion",
-        "tags": ["sweet", "comfort", "filling"]
+        "tags": ["sweet", "comfort", "filling"],
+        "price_range": "medium"
       },
       {
         "name": "Apple Pie",
-        "tags": ["sweet", "savory", "comfort"]
+        "tags": ["sweet", "savory", "comfort"],
+        "price_range": "medium"
       }
     ]
   },
@@ -513,15 +598,18 @@
     "dishes": [
       {
         "name": "Lotus Cheesecake",
-        "tags": ["sweet", "heavy", "premium"]
+        "tags": ["sweet", "heavy", "premium"],
+        "price_range": "high"
       },
       {
         "name": "Nutella Cupcake",
-        "tags": ["sweet", "quick", "comfort"]
+        "tags": ["sweet", "quick", "comfort"],
+        "price_range": "medium"
       },
       {
         "name": "Red Velvet Cake",
-        "tags": ["sweet", "light", "trendy"]
+        "tags": ["sweet", "light", "trendy"],
+        "price_range": "medium"
       }
     ]
   },
@@ -531,15 +619,18 @@
     "dishes": [
       {
         "name": "Pineapple Cake",
-        "tags": ["sweet", "comfort", "sharing"]
+        "tags": ["sweet", "comfort", "sharing"],
+        "price_range": "low"
       },
       {
         "name": "Chocolate Fudge Pastry",
-        "tags": ["sweet", "quick", "cheap"]
+        "tags": ["sweet", "quick", "cheap"],
+        "price_range": "low"
       },
       {
         "name": "Puff Pastry (Savory)",
-        "tags": ["savory", "light", "quick"]
+        "tags": ["savory", "light", "quick"],
+        "price_range": "low"
       }
     ]
   },
@@ -549,15 +640,18 @@
     "dishes": [
       {
         "name": "Almond Croissant",
-        "tags": ["sweet", "premium", "light"]
+        "tags": ["sweet", "premium", "light"],
+        "price_range": "high"
       },
       {
         "name": "Carrot Cake",
-        "tags": ["sweet", "savory", "cozy"]
+        "tags": ["sweet", "savory", "cozy"],
+        "price_range": "medium"
       },
       {
         "name": "Chocolate Tart",
-        "tags": ["sweet", "premium", "comfort"]
+        "tags": ["sweet", "premium", "comfort"],
+        "price_range": "high"
       }
     ]
   },
@@ -567,15 +661,18 @@
     "dishes": [
       {
         "name": "Polo Tuscan",
-        "tags": ["premium", "savory", "filling"]
+        "tags": ["premium", "savory", "filling"],
+        "price_range": "high"
       },
       {
         "name": "Fettuccine Alfredo",
-        "tags": ["heavy", "comfort", "savory"]
+        "tags": ["heavy", "comfort", "savory"],
+        "price_range": "high"
       },
       {
         "name": "Thin Crust Pizza",
-        "tags": ["sharing", "trendy", "light"]
+        "tags": ["sharing", "trendy", "light"],
+        "price_range": "medium"
       }
     ]
   }
