@@ -1,70 +1,106 @@
 .app {
-  position: relative;
   min-height: 100vh;
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
 }
 
 .inner {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1100px;
+  max-width: 680px;
+  padding: 0 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 1.5rem 0 0.5rem;
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 400;
-  color: var(--amber);
-  letter-spacing: 0.02em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
 }
 
 .headerRight {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
+}
+
+.userMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.userName {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .logoutBtn {
-  padding: 0.6rem 1.5rem;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--ink-soft);
-  background: var(--paper-card);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-pill);
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.18s ease;
 }
 
 .logoutBtn:hover {
-  color: var(--amber);
-  border-color: var(--amber-border);
-  background: white;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
 }
 
+/* ── Main ──────────────────────────────────────────────────────────────────── */
+
 .main {
-  background: rgba(255, 250, 244, 0.85);
-  backdrop-filter: blur(12px);
-  border-radius: var(--radius-xl);
-  padding: 4rem 3rem;
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--border);
-  min-height: 520px;
+  flex: 1;
+  padding-top: 1.5rem;
+}
+
+/* ── Error banner ──────────────────────────────────────────────────────────── */
+
+.errorBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 80, 80, 0.12);
+  border: 1px solid rgba(255, 80, 80, 0.25);
+  color: #ff8080;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.errorReset {
+  background: none;
+  border: none;
+  color: #ff8080;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── Full-page centred (loading state) ─────────────────────────────────────── */
+
+.centred {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;

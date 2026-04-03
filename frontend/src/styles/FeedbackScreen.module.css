@@ -1,221 +1,165 @@
 .screen {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 520px;
-  text-align: center;
-}
-
-.eyebrow {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 0.8rem;
-  opacity: 0.9;
+  gap: 1.5rem;
+  padding: 2rem 0 4rem;
   animation: fadeUp 0.4s ease both;
 }
 
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent, #ff6b6b);
+}
+
 .heading {
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 5.5vw, 3rem);
-  font-weight: 400;
-  color: var(--ink);
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-  animation: fadeUp 0.45s 0.05s ease both;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0;
 }
 
 .heading em {
-  font-style: italic;
-  color: var(--amber);
+  font-style: normal;
+  color: var(--accent, #ff6b6b);
 }
 
 .sub {
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-weight: 300;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  animation: fadeUp 0.45s 0.1s ease both;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.55;
+  margin: 0;
 }
 
-.card {
-  background: var(--paper-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  padding: 1.6rem 1.8rem;
-  box-shadow: var(--shadow-card);
-  width: 100%;
-  text-align: left;
-  animation: slideInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
+/* ── Thumbs row ────────────────────────────────────────────────────────────── */
 
-.label {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.85rem;
-}
-
-.optional {
-  font-weight: 300;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--muted-light);
-}
-
-.stars {
+.thumbsRow {
   display: flex;
-  gap: 6px;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-.star {
-  font-size: 2rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: var(--border);
-  transition: color 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
-  padding: 0;
-  line-height: 1;
-}
-
-.star:hover,
-.star.lit {
-  color: var(--amber);
-}
-
-.star:hover {
-  transform: scale(1.2);
-}
-
-.star.lit {
-  transform: scale(1.1);
-}
-
-.textarea {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 300;
-  width: 100%;
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 1rem 1.2rem;
-  color: var(--ink);
-  resize: none;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  line-height: 1.7;
-}
-
-.textarea::placeholder {
-  color: var(--muted-light);
-  font-style: italic;
-  font-size: 0.86rem;
-}
-
-.textarea:focus {
-  border-color: var(--amber);
-  box-shadow: 0 0 0 3px var(--amber-glow);
-}
-
-.actions {
+.thumbBtn {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.7rem;
-  margin-top: 1.8rem;
-  animation: fadeUp 0.45s 0.3s ease both;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.thumbBtn span {
+  font-size: 0.85rem;
+}
+
+.thumbBtn:first-child {
+  font-size: 2rem;
+}
+
+.thumbBtn:last-child {
+  font-size: 2rem;
+}
+
+.thumbUp:hover:not(:disabled) {
+  border-color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  color: #4ade80;
+  transform: translateY(-2px);
+}
+
+.thumbDown:hover:not(:disabled) {
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  transform: translateY(-2px);
+}
+
+.thumbBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Skip link ─────────────────────────────────────────────────────────────── */
+
+.resetLink {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: center;
+  padding: 0.25rem;
+  transition: color 0.18s ease;
+}
+
+.resetLink:hover {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ── Thank you state ───────────────────────────────────────────────────────── */
+
+.thankWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 3rem 0;
+}
+
+.thankIcon {
+  font-size: 2rem;
+  color: var(--accent, #ff6b6b);
+}
+
+.thankHeading {
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.thankSub {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+  margin: 0;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  background: var(--accent, #ff6b6b);
   color: #fff;
-  background: var(--amber);
+  font-size: 0.95rem;
+  font-weight: 600;
   border: none;
-  border-radius: var(--radius-pill);
-  padding: 0.82rem 2.4rem;
   cursor: pointer;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: var(--shadow-btn);
+  margin-top: 0.5rem;
+  transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
-.btn:hover:not(.btnDisabled) {
-  background: var(--amber-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(217, 123, 40, 0.40);
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
 }
 
-.btn:active:not(.btnDisabled) {
-  transform: scale(0.97);
-}
+.arrow { font-size: 1rem; }
 
-.btnDisabled {
-  background: var(--muted-light);
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.65;
-}
-
-.resetLink {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: var(--muted);
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1px;
-  cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
-}
-
-.resetLink:hover {
-  color: var(--amber);
-  border-color: var(--amber-border);
-}
-
-/* ── Thank-you state ── */
-.thankWrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.thankIcon {
-  font-size: 2.4rem;
-  color: var(--amber);
-  margin-bottom: 1.2rem;
-  animation: pulse-soft 2.4s ease infinite;
-}
-
-.thankHeading {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
-  font-weight: 400;
-  color: var(--ink);
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
-}
-
-.thankSub {
-  font-size: 0.92rem;
-  color: var(--muted);
-  font-weight: 300;
-  line-height: 1.7;
-  margin-bottom: 2rem;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

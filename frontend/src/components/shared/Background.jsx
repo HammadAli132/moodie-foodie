@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import styles from '../styles/Background.module.css';
+import styles from '../../styles/Background.module.css';
 
 export default function Background() {
   const drops = useMemo(() =>

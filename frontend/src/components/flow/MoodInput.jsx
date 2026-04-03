@@ -1,47 +1,59 @@
-import React, { useRef } from 'react';
-import styles from '../styles/MoodScreen.module.css';
+import React, { useState } from 'react';
+import styles from '../../styles/MoodScreen.module.css';
 
-export default function MoodInput({ moodText, setMoodText, onNext }) {
-  const taRef = useRef();
+const MOODS = [
+  { value: 'stressed',     label: 'Stressed',     emoji: '😤' },
+  { value: 'happy',        label: 'Happy',        emoji: '😊' },
+  { value: 'tired',        label: 'Tired',        emoji: '😴' },
+  { value: 'celebratory',  label: 'Celebratory',  emoji: '🎉' },
+  { value: 'sad',          label: 'Sad',          emoji: '😔' },
+  { value: 'neutral',      label: 'Neutral',      emoji: '😐' },
+  { value: 'anxious',      label: 'Anxious',      emoji: '😰' },
+  { value: 'bored',        label: 'Bored',        emoji: '🥱' },
+  { value: 'excited',      label: 'Excited',      emoji: '🤩' },
+  { value: 'romantic',     label: 'Romantic',     emoji: '🥰' },
+];
 
-  function handleSubmit() {
-    if (!moodText.trim()) {
-      taRef.current?.focus();
-      taRef.current?.classList.add(styles.shake);
-      setTimeout(() => taRef.current?.classList.remove(styles.shake), 500);
-      return;
-    }
-    onNext();
+export default function MoodInput({ onSubmit, loading }) {
+  const [selected, setSelected] = useState(null);
+
+  function handleNext() {
+    if (!selected || loading) return;
+    onSubmit(selected);
   }
 
   return (
     <div className={styles.screen}>
       <div className={styles.eyebrow}>tell us your mood</div>
-
       <h1 className={styles.heading}>
-        What are you <em>craving</em> tonight?
+        How are you <em>feeling</em> right now?
       </h1>
-
       <p className={styles.sub}>
-        Describe your evening, your feeling, the weather —<br />
-        we'll find the food that fits.
+        Pick the mood that fits — we'll take it from here.
       </p>
 
-      <textarea
-        ref={taRef}
-        className={styles.textarea}
-        value={moodText}
-        onChange={(e) => setMoodText(e.target.value)}
-        placeholder="It's raining outside and I want something that feels like a warm hug, a snuggle in a blanket..."
-        rows={5}
-        onKeyDown={(e) => { if (e.key === 'Enter' && e.metaKey) handleSubmit(); }}
-      />
+      <div className={styles.moodGrid}>
+        {MOODS.map(({ value, label, emoji }) => (
+          <button
+            key={value}
+            className={`${styles.moodCard} ${selected === value ? styles.selected : ''}`}
+            onClick={() => setSelected(value)}
+            disabled={loading}
+            type="button"
+          >
+            <span className={styles.moodEmoji}>{emoji}</span>
+            <span className={styles.moodLabel}>{label}</span>
+          </button>
+        ))}
+      </div>
 
-      <p className={styles.hint}>tip: be as poetic or specific as you like</p>
-
-      <button className={styles.btn} onClick={handleSubmit}>
-        Find My Food
-        <span className={styles.arrow}>→</span>
+      <button
+        className={`${styles.btn} ${!selected || loading ? styles.btnDisabled : ''}`}
+        onClick={handleNext}
+        disabled={!selected || loading}
+      >
+        {loading ? 'Loading questions…' : 'Next'}
+        {!loading && <span className={styles.arrow}>→</span>}
       </button>
     </div>
   );

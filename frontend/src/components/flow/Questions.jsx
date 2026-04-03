@@ -1,19 +1,33 @@
-import React from 'react';
-import { QUESTIONS } from '../data/mockData';
-import styles from '../styles/QuestionsScreen.module.css';
+import React, { useState } from 'react';
+import styles from '../../styles/QuestionsScreen.module.css';
 
-export default function Questions({ answers, setAnswers, onBack, onNext }) {
-  const allAnswered = answers.every((a) => a !== null);
+/**
+ * questions: Array<{ question: string, options: [{label: string, value: string}] }>
+ * onBack: () => void
+ * onSubmit: (answers: [{question: string, answer: string}]) => void
+ * loading: bool
+ */
+export default function Questions({ questions, onBack, onSubmit, loading }) {
+  // Track selected option index per question
+  const [selections, setSelections] = useState(() => Array(questions.length).fill(null));
 
-  function selectAnswer(qIndex, oIndex) {
-    const next = [...answers];
-    next[qIndex] = oIndex;
-    setAnswers(next);
+  const allAnswered = selections.every((s) => s !== null);
+
+  function select(qIndex, oIndex) {
+    setSelections((prev) => {
+      const next = [...prev];
+      next[qIndex] = oIndex;
+      return next;
+    });
   }
 
   function handleSubmit() {
-    if (!allAnswered) return;
-    onNext();
+    if (!allAnswered || loading) return;
+    const answers = questions.map((q, i) => ({
+      question: q.question,
+      answer: q.options[selections[i]].value,
+    }));
+    onSubmit(answers);
   }
 
   return (
@@ -25,7 +39,7 @@ export default function Questions({ answers, setAnswers, onBack, onNext }) {
       <p className={styles.sub}>Help us understand what you're in the mood for.</p>
 
       <div className={styles.questions}>
-        {QUESTIONS.map((q, qi) => (
+        {questions.map((q, qi) => (
           <div
             key={qi}
             className={styles.card}
@@ -39,10 +53,12 @@ export default function Questions({ answers, setAnswers, onBack, onNext }) {
               {q.options.map((opt, oi) => (
                 <button
                   key={oi}
-                  className={`${styles.chip} ${answers[qi] === oi ? styles.selected : ''}`}
-                  onClick={() => selectAnswer(qi, oi)}
+                  className={`${styles.chip} ${selections[qi] === oi ? styles.selected : ''}`}
+                  onClick={() => select(qi, oi)}
+                  disabled={loading}
+                  type="button"
                 >
-                  {opt}
+                  {opt.label}
                 </button>
               ))}
             </div>
@@ -52,14 +68,14 @@ export default function Questions({ answers, setAnswers, onBack, onNext }) {
 
       <div className={styles.actions}>
         <button
-          className={`${styles.btn} ${!allAnswered ? styles.btnDisabled : ''}`}
+          className={`${styles.btn} ${!allAnswered || loading ? styles.btnDisabled : ''}`}
           onClick={handleSubmit}
-          disabled={!allAnswered}
+          disabled={!allAnswered || loading}
         >
-          Show Me What to Eat
-          <span className={styles.arrow}>→</span>
+          {loading ? 'Finding your food…' : 'Show Me What to Eat'}
+          {!loading && <span className={styles.arrow}>→</span>}
         </button>
-        <button className={styles.btnGhost} onClick={onBack}>
+        <button className={styles.btnGhost} onClick={onBack} disabled={loading} type="button">
           ← Back
         </button>
       </div>

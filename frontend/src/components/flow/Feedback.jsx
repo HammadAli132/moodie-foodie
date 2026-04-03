@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
-import styles from '../styles/FeedbackScreen.module.css';
+import styles from '../../styles/FeedbackScreen.module.css';
 
-export default function Feedback({ onReset }) {
-  const [rating, setRating] = useState(0);
-  const [hovered, setHovered] = useState(0);
-  const [comment, setComment] = useState('');
+/**
+ * onSubmit: (thumbsUp: boolean) => Promise<void>
+ * onReset:  () => void
+ */
+export default function Feedback({ onSubmit, onReset }) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading]     = useState(false);
 
-  function handleSubmit() {
-    if (!rating) return;
-    // Store feedback in localStorage for persistence
-    try {
-      const prev = JSON.parse(localStorage.getItem('foodiemoodie_feedback') || '[]');
-      prev.push({ rating, comment, timestamp: new Date().toISOString() });
-      localStorage.setItem('foodiemoodie_feedback', JSON.stringify(prev));
-    } catch {
-      // localStorage unavailable — silently continue
-    }
+  async function handleVote(thumbsUp) {
+    setLoading(true);
+    await onSubmit(thumbsUp);
     setSubmitted(true);
+    setLoading(false);
   }
 
   if (submitted) {
@@ -43,55 +39,36 @@ export default function Feedback({ onReset }) {
     <div className={styles.screen}>
       <div className={styles.eyebrow}>one last thing</div>
       <h1 className={styles.heading}>
-        How did we <em>do?</em>
+        Did this match your <em>mood?</em>
       </h1>
       <p className={styles.sub}>
-        Was it the right kind of comfort? Tell us.
+        Your answer helps us recommend better next time.
       </p>
 
-      <div className={styles.card}>
-        <p className={styles.label}>Rate your experience</p>
-        <div
-          className={styles.stars}
-          onMouseLeave={() => setHovered(0)}
-        >
-          {[1, 2, 3, 4, 5].map((n) => (
-            <button
-              key={n}
-              className={`${styles.star} ${n <= (hovered || rating) ? styles.lit : ''}`}
-              onClick={() => setRating(n)}
-              onMouseEnter={() => setHovered(n)}
-              aria-label={`Rate ${n} out of 5`}
-            >
-              ★
-            </button>
-          ))}
-        </div>
-
-        <p className={styles.label} style={{ marginTop: '1.2rem' }}>
-          Tell us more <span className={styles.optional}>(optional)</span>
-        </p>
-        <textarea
-          className={styles.textarea}
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-          placeholder="What were you craving? Was the suggestion spot on?"
-          rows={4}
-        />
-      </div>
-
-      <div className={styles.actions}>
+      <div className={styles.thumbsRow}>
         <button
-          className={`${styles.btn} ${!rating ? styles.btnDisabled : ''}`}
-          onClick={handleSubmit}
-          disabled={!rating}
+          className={`${styles.thumbBtn} ${styles.thumbUp}`}
+          onClick={() => handleVote(true)}
+          disabled={loading}
+          aria-label="Yes, it matched"
         >
-          Submit Feedback
+          👍
+          <span>Yes!</span>
         </button>
-        <button className={styles.resetLink} onClick={onReset}>
-          Skip &amp; start over
+        <button
+          className={`${styles.thumbBtn} ${styles.thumbDown}`}
+          onClick={() => handleVote(false)}
+          disabled={loading}
+          aria-label="No, it didn't match"
+        >
+          👎
+          <span>Not quite</span>
         </button>
       </div>
+
+      <button className={styles.resetLink} onClick={onReset} disabled={loading}>
+        Skip &amp; start over
+      </button>
     </div>
   );
 }
