@@ -1,31 +1,44 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.routes import router
-from database.db import init_db
+
+from api.router import api_router
+from database.mongodb import connect, disconnect
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Open DB connection on startup, close on shutdown."""
+    await connect()
+    yield
+    await disconnect()
+
 
 app = FastAPI(
     title="Foodie Moodie API",
-    description="Mood-based food recommendation system for Islamabad/Rawalpindi",
-    version="1.0.0"
+    description="Mood-based food discovery for urban Pakistan.",
+    version="2.0.0",
+    lifespan=lifespan,
 )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],  # React dev servers
+    allow_origins=[
+        "http://localhost:5173",  # Vite dev
+        "http://localhost:3000",  # CRA dev
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-@app.on_event("startup")
-async def startup_event():
-    init_db()
+app.include_router(api_router, prefix="/api")
 
-app.include_router(router, prefix="/api")
 
-@app.get("/")
+@app.get("/", tags=["Root"])
 def root():
-    return {"message": "Foodie Moodie API is running"}
+    return {"message": "Foodie Moodie API is running ✅"}
+
 
 if __name__ == "__main__":
     import uvicorn

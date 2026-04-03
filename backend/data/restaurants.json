@@ -1,106 +1,141 @@
 [
   {
-    "restaurant": "Cheezious",
-    "link": "https://www.foodpanda.pk/restaurant/v3mx/cheezious-f-10-markaz",
-    "dishes": [
-      {
-        "name": "Crown Crust Pizza",
-        "tags": ["comfort", "heavy", "sharing", "cheap"],
-        "price_range": "low"
-      },
-      {
-        "name": "Behari Roll",
-        "tags": ["spicy", "quick", "savory", "filling"],
-        "price_range": "low"
-      },
-      {
-        "name": "Bazinga Burger",
-        "tags": ["filling", "trendy", "savory"],
-        "price_range": "low"
-      }
-    ]
-  },
-  {
-    "restaurant": "McDonald's",
-    "link": "https://www.foodpanda.pk/restaurant/s4bn/mcdonalds-f-7-markaz",
-    "dishes": [
-      {
-        "name": "Big Mac",
-        "tags": ["comfort", "filling", "savory"],
-        "price_range": "medium"
-      },
-      {
-        "name": "McSpicy Burger",
-        "tags": ["spicy", "quick", "savory"],
-        "price_range": "medium"
-      },
-      {
-        "name": "Chicken McNuggets",
-        "tags": ["quick", "sharing", "comfort"],
-        "price_range": "low"
-      }
-    ]
-  },
-  {
-    "restaurant": "Cafe Rustic",
-    "link": "https://www.foodpanda.pk/restaurant/cafe-rustic-islamabad",
-    "dishes": [
-      {
-        "name": "Nutella Crepes",
-        "tags": ["sweet", "cozy", "premium", "comfort"],
-        "price_range": "medium"
-      },
-      {
-        "name": "Chicken Alfredo Pasta",
-        "tags": ["comfort", "heavy", "cozy", "savory"],
-        "price_range": "medium"
-      },
-      {
-        "name": "Iced Matcha Latte",
-        "tags": ["light", "trendy", "cozy"],
-        "price_range": "medium"
-      }
-    ]
-  },
-  {
-    "restaurant": "Monal",
-    "link": "https://www.foodpanda.pk/restaurant/monal-islamabad",
+    "restaurant": "Monal Restaurant",
+    "link": "https://www.foodpanda.pk/restaurant/monal",
     "dishes": [
       {
         "name": "Karahi Gosht",
-        "tags": ["spicy", "heavy", "premium", "sharing", "savory"],
-        "price_range": "high"
+        "tags": ["comfort", "hearty", "warm", "heavy", "savory", "sharing"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": []
+        }
       },
       {
-        "name": "Chicken Tikka",
-        "tags": ["spicy", "premium", "savory", "sharing"],
-        "price_range": "high"
-      },
-      {
-        "name": "Daal Makhani",
-        "tags": ["comfort", "cozy", "savory", "filling"],
-        "price_range": "medium"
+        "name": "Chicken Handi",
+        "tags": ["comfort", "warm", "filling", "rich", "savory"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["dairy"]
+        }
       }
     ]
   },
   {
-    "restaurant": "Howdy",
-    "link": "https://www.foodpanda.pk/restaurant/howdy-islamabad",
+    "restaurant": "Hotspot",
+    "link": "https://www.foodpanda.pk/restaurant/hotspot",
     "dishes": [
       {
-        "name": "Manchurian",
-        "tags": ["spicy", "savory", "sharing", "trendy"],
-        "price_range": "medium"
+        "name": "Broast Combo",
+        "tags": ["crispy", "heavy", "indulgent", "quick", "cheap"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten"]
+        }
       },
       {
-        "name": "Crispy Honey Chilli Chicken",
-        "tags": ["spicy", "sweet", "trendy", "sharing"],
-        "price_range": "medium"
+        "name": "Zinger Burger",
+        "tags": ["crispy", "quick", "indulgent", "cheap", "savory"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten", "dairy"]
+        }
+      }
+    ]
+  },
+  {
+    "restaurant": "Tuscany Courtyard",
+    "link": "https://www.foodpanda.pk/restaurant/tuscany",
+    "dishes": [
+      {
+        "name": "Truffle Mushroom Pasta",
+        "tags": ["comfort", "rich", "indulgent", "premium", "savory"],
+        "price_range": "high",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": true,
+          "allergens": ["gluten", "dairy"]
+        }
       },
       {
-        "name": "Chow Mein",
-        "tags": ["quick", "filling", "savory", "cheap"],
-        "price_range": "low"
+        "name": "Margherita Pizza",
+        "tags": ["comfort", "cheesy", "sharing", "trendy"],
+        "price_range": "high",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": true,
+          "allergens": ["gluten", "dairy"]
+        }
+      }
+    ]
+  },
+  {
+    "restaurant": "Zaiqa Restaurant",
+    "link": "https://www.foodpanda.pk/restaurant/zaiqa",
+    "dishes": [
+      {
+        "name": "Daal Makhani",
+        "tags": ["comfort", "cozy", "warm", "filling", "healthy", "cheap"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": true,
+          "allergens": ["dairy"]
+        }
+      },
+      {
+        "name": "Chana Masala",
+        "tags": ["comfort", "hearty", "filling", "healthy", "spicy", "cheap"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": true,
+          "is_vegetarian": true,
+          "allergens": []
+        }
+      }
+    ]
+  },
+  {
+    "restaurant": "Jade Café",
+    "link": "https://www.foodpanda.pk/restaurant/jade-cafe",
+    "dishes": [
+      {
+        "name": "Tom Yum Soup",
+        "tags": ["light", "spicy", "refreshing", "warm", "quick"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["shellfish"]
+        }
+      },
+      {
+        "name": "Chicken Fried Rice",
+        "tags": ["quick", "filling", "savory", "cheap", "sharing"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["soy", "eggs"]
+        }
       }
     ]
   }

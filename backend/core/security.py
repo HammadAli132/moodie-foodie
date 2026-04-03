@@ -1,0 +1,47 @@
+from datetime import datetime, timedelta, timezone
+from typing import Optional
+import warnings
+
+from jose import JWTError, jwt
+from passlib.context import CryptContext
+
+from core.config import settings
+
+# passlib 1.7.4 attempts to read bcrypt.__about__ which was removed in bcrypt 4.x.
+# Suppress the warning so startup logs stay clean; hashing still works correctly.
+with warnings.catch_warnings():
+    warnings.filterwarnings("ignore", ".*error reading bcrypt version.*")
+    pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+
+# ── Password ───────────────────────────────────────────────────────────────────
+
+def hash_password(plain: str) -> str:
+    return pwd_context.hash(plain)
+
+
+def verify_password(plain: str, hashed: str) -> bool:
+    return pwd_context.verify(plain, hashed)
+
+
+# ── JWT ────────────────────────────────────────────────────────────────────────
+
+def create_access_token(subject: str, expires_delta: Optional[timedelta] = None) -> str:
+    """Create a signed JWT. `subject` is the user's string ID."""
+    expire = datetime.now(timezone.utc) + (
+        expires_delta or timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
+    )
+    payload = {"sub": subject, "exp": expire, "iat": datetime.now(timezone.utc)}
+    return jwt.encode(payload, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
+
+
+def decode_access_token(token: str) -> Optional[str]:
+    """
+    Decode a JWT and return the subject (user ID string).
+    Returns None if the token is invalid or expired.
+    """
+    try:
+        payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
+        return payload.get("sub")
+    except JWTError:
+        return None
