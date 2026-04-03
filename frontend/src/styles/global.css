@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+/* ── Design tokens ── */
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Jost', sans-serif;
+
+  --ink:           #1c1309;
+  --ink-soft:      #4a3520;
+  --paper:         #fdf6ec;
+  --paper-warm:    #f9efe0;
+  --paper-card:    #fffaf4;
+  --amber:         #d97b28;
+  --amber-hover:   #b8611a;
+  --amber-pale:    #faebd4;
+  --amber-glow:    rgba(217, 123, 40, 0.18);
+  --amber-border:  rgba(217, 123, 40, 0.30);
+  --muted:         #9a7a56;
+  --muted-light:   #c4a882;
+  --border:        rgba(180, 130, 75, 0.22);
+  --border-hover:  rgba(217, 123, 40, 0.40);
+  --shadow-soft:   0 2px 16px rgba(100, 55, 10, 0.10);
+  --shadow-card:   0 4px 28px rgba(100, 55, 10, 0.13);
+  --shadow-btn:    0 4px 20px rgba(217, 123, 40, 0.32);
+
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+  --radius-pill: 100px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Screen transition ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+@keyframes raindrop {
+  from { transform: translateY(-10vh); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.6; }
+  to   { transform: translateY(110vh); opacity: 0; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 0.85; }
+}

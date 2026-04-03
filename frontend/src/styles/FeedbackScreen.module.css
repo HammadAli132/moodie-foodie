@@ -1,0 +1,221 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.8rem;
+  opacity: 0.9;
+  animation: fadeUp 0.4s ease both;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 5.5vw, 3rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  animation: fadeUp 0.45s 0.05s ease both;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  animation: fadeUp 0.45s 0.1s ease both;
+}
+
+.card {
+  background: var(--paper-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 1.6rem 1.8rem;
+  box-shadow: var(--shadow-card);
+  width: 100%;
+  text-align: left;
+  animation: slideInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+}
+
+.optional {
+  font-weight: 300;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted-light);
+}
+
+.stars {
+  display: flex;
+  gap: 6px;
+}
+
+.star {
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--border);
+  transition: color 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 0;
+  line-height: 1;
+}
+
+.star:hover,
+.star.lit {
+  color: var(--amber);
+}
+
+.star:hover {
+  transform: scale(1.2);
+}
+
+.star.lit {
+  transform: scale(1.1);
+}
+
+.textarea {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  width: 100%;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.2rem;
+  color: var(--ink);
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  line-height: 1.7;
+}
+
+.textarea::placeholder {
+  color: var(--muted-light);
+  font-style: italic;
+  font-size: 0.86rem;
+}
+
+.textarea:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px var(--amber-glow);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.8rem;
+  animation: fadeUp 0.45s 0.3s ease both;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--amber);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.82rem 2.4rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: var(--shadow-btn);
+}
+
+.btn:hover:not(.btnDisabled) {
+  background: var(--amber-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(217, 123, 40, 0.40);
+}
+
+.btn:active:not(.btnDisabled) {
+  transform: scale(0.97);
+}
+
+.btnDisabled {
+  background: var(--muted-light);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.resetLink {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.resetLink:hover {
+  color: var(--amber);
+  border-color: var(--amber-border);
+}
+
+/* ── Thank-you state ── */
+.thankWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.thankIcon {
+  font-size: 2.4rem;
+  color: var(--amber);
+  margin-bottom: 1.2rem;
+  animation: pulse-soft 2.4s ease infinite;
+}
+
+.thankHeading {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.thankSub {
+  font-size: 0.92rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}

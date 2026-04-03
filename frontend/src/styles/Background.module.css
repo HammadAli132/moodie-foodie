@@ -1,0 +1,42 @@
+.bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.glowTop {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 55%;
+  height: 55%;
+  background: radial-gradient(ellipse, rgba(217, 123, 40, 0.10) 0%, transparent 68%);
+  border-radius: 50%;
+}
+
+.glowBottom {
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 60%;
+  height: 55%;
+  background: radial-gradient(ellipse, rgba(217, 123, 40, 0.07) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.drop {
+  position: absolute;
+  top: -10vh;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(160, 110, 55, 0.55) 40%,
+    rgba(160, 110, 55, 0.55) 60%,
+    transparent 100%
+  );
+  animation: raindrop linear infinite;
+  border-radius: 1px;
+}

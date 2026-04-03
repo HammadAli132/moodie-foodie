@@ -1,121 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React, { useState } from 'react';
+import './styles/global.css';
+import Background from './components/Background';
+import MoodInput from './components/MoodInput';
+import Questions from './components/Questions';
+import Recommendations from './components/Recommendations';
+import Feedback from './components/Feedback';
+import StepDots from './components/StepDots';
+import styles from './styles/App.module.css';
+import { getRecommendations } from './utils/recommendationEngine';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [step, setStep] = useState(0);
+  const [moodText, setMoodText] = useState('');
+  const [answers, setAnswers] = useState([null, null, null]);
+  const [recommendations, setRecommendations] = useState([]);
+
+  function handleReset() {
+    setStep(0);
+    setMoodText('');
+    setAnswers([null, null, null]);
+    setRecommendations([]);
+  }
+
+  function handleQuestionsNext() {
+    const recs = getRecommendations(moodText, answers);
+    setRecommendations(recs);
+    setStep(2);
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className={styles.app}>
+      <Background />
+      <div className={styles.inner}>
+        <header className={styles.header}>
+          <span className={styles.logo}>Foodie Moodie</span>
+          <StepDots current={step} total={4} />
+        </header>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <main className={styles.main} key={step}>
+          {step === 0 && (
+            <MoodInput
+              moodText={moodText}
+              setMoodText={setMoodText}
+              onNext={() => setStep(1)}
+            />
+          )}
+          {step === 1 && (
+            <Questions
+              answers={answers}
+              setAnswers={setAnswers}
+              onBack={() => setStep(0)}
+              onNext={handleQuestionsNext}
+            />
+          )}
+          {step === 2 && (
+            <Recommendations
+              recommendations={recommendations}
+              onFeedback={() => setStep(3)}
+              onReset={handleReset}
+            />
+          )}
+          {step === 3 && (
+            <Feedback
+              onReset={handleReset}
+            />
+          )}
+        </main>
+      </div>
+    </div>
+  );
 }
-
-export default App
