@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { useRecommendations } from '../hooks/useRecommendations';
 import StepDots from '../components/shared/StepDots';
@@ -7,10 +7,21 @@ import MoodInput from '../components/flow/MoodInput';
 import Questions from '../components/flow/Questions';
 import Recommendations from '../components/flow/Recommendations';
 import Feedback from '../components/flow/Feedback';
+import ProfilePage from './ProfilePage';
 import styles from '../styles/App.module.css';
+
+/** Returns up to 2 initials from a full name, e.g. "Ali Raza" → "AR", "Ali" → "A" */
+function getInitials(name) {
+  if (!name) return '?';
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
+  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+}
 
 export default function AppPage() {
   const { user, logout } = useAuth();
+  const [showProfile, setShowProfile] = useState(false);
+
   const {
     step,
     questions,
@@ -25,18 +36,39 @@ export default function AppPage() {
     reset,
   } = useRecommendations();
 
-  // Steps 0-3 map to: mood → questions → recommendations → feedback
-  // StepDots only shows during the active flow (steps 0-3)
-  const TOTAL_STEPS = 4;
+  if (showProfile) {
+    return (
+      <>
+        <header className={styles.header}>
+          <span className={styles.logo}>Foodie Moodie</span>
+          <div className={styles.headerRight}>
+            <button className={styles.logoutBtn} onClick={logout} type="button">
+              Logout
+            </button>
+          </div>
+        </header>
+        <main className={styles.main}>
+          <ProfilePage onBack={() => setShowProfile(false)} />
+        </main>
+      </>
+    );
+  }
 
   return (
     <>
       <header className={styles.header}>
         <span className={styles.logo}>Foodie Moodie</span>
         <div className={styles.headerRight}>
-          <StepDots current={step} total={TOTAL_STEPS} />
+          <StepDots current={step} total={4} />
           <div className={styles.userMeta}>
-            <span className={styles.userName}>{user?.name}</span>
+            <button
+              className={styles.profileBtn}
+              onClick={() => setShowProfile(true)}
+              type="button"
+              title={user?.name || 'Profile'}
+            >
+              {getInitials(user?.name)}
+            </button>
             <button className={styles.logoutBtn} onClick={logout} type="button">
               Logout
             </button>
@@ -46,7 +78,6 @@ export default function AppPage() {
 
       <main className={styles.main} key={step}>
 
-        {/* Global error banner — shown on top of whichever step is active */}
         {error && (
           <div className={styles.errorBanner}>
             {error}

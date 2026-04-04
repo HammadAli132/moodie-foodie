@@ -1,5 +1,5 @@
 from typing import Optional
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, Field
 from core.config import settings
 
 
@@ -10,10 +10,17 @@ class UserProfileResponse(BaseModel):
     has_preferences: bool
 
 
+class UpdateProfileRequest(BaseModel):
+    """All fields optional — only provided fields are updated."""
+    name: Optional[str] = Field(default=None, min_length=2, max_length=80)
+    current_password: Optional[str] = Field(default=None)
+    new_password: Optional[str] = Field(default=None, min_length=8, max_length=128)
+
+
 class DietaryPreferencesRequest(BaseModel):
     """
-    Sent by the frontend during onboarding or when the user updates their profile.
-    All fields are optional — only provided fields will be updated.
+    Sent during onboarding or profile update.
+    All fields optional — only provided fields will be updated.
     """
     dietary_flags: Optional[list[str]] = Field(
         default=None,
