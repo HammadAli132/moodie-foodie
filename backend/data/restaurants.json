@@ -1,5 +1,278 @@
 [
   {
+    "restaurant": "McDonald's",
+    "link": "https://www.foodpanda.pk/restaurant/u5ya/mcdonalds-f9-park-u5ya?srsltid=AfmBOoqJ0YJXVHCqUuhu153NeGP5C54ynkKRAsGNLjzHtZhvJhHy5lKe",
+    "dishes": [
+      {
+        "name": "Big Mac",
+        "tags": ["comfort", "filling", "savory"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten", "dairy", "eggs"]
+        }
+      },
+      {
+        "name": "McSpicy Burger",
+        "tags": ["spicy", "quick", "savory"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten", "eggs"]
+        }
+      },
+      {
+        "name": "Chicken McNuggets",
+        "tags": ["quick", "sharing", "comfort"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten"]
+        }
+      }
+    ]
+  },
+  {
+    "restaurant": "KFC",
+    "link": "https://www.foodpanda.pk/restaurant/l78p/kfc-f-11",
+    "dishes": [
+      {
+        "name": "Zinger Burger",
+        "tags": ["spicy", "quick", "filling"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten", "dairy", "eggs"]
+        }
+      },
+      {
+        "name": "Hot Shots",
+        "tags": ["spicy", "quick", "sharing"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten"]
+        }
+      },
+      {
+        "name": "Mighty Zinger",
+        "tags": ["heavy", "filling", "spicy"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten", "dairy", "eggs"]
+        }
+      }
+    ]
+  },
+  {
+    "restaurant": "Cheezious",
+    "link": "https://cheezious.com/menu",
+    "dishes": [
+      {
+        "name": "Crown Crust Pizza",
+        "tags": ["comfort", "heavy", "sharing"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten", "dairy"]
+        }
+      },
+      {
+        "name": "Behari Roll",
+        "tags": ["spicy", "quick", "savory"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten"]
+        }
+      },
+      {
+        "name": "Bazinga Burger",
+        "tags": ["filling", "trendy", "savory"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten", "dairy"]
+        }
+      }
+    ]
+  },
+  {
+    "restaurant": "OPTP",
+    "link": "https://www.foodpanda.pk/restaurant/s6ov/optp-f-11",
+    "dishes": [
+      {
+        "name": "GMC Burger",
+        "tags": ["filling", "heavy", "savory"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten", "dairy"]
+        }
+      },
+      {
+        "name": "Masala Fries",
+        "tags": ["spicy", "quick", "sharing"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": true,
+          "is_vegetarian": true,
+          "allergens": []
+        }
+      },
+      {
+        "name": "Zingers",
+        "tags": ["quick", "savory", "cheap"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten"]
+        }
+      }
+    ]
+  },
+  {
+    "restaurant": "Howdy",
+    "link": "https://www.foodpanda.pk/restaurant/vo53/howdy-f-7?srsltid=AfmBOopm8wcbDC0f8nDxzj8ztG9mQu-1k3NvEOdiO5Yg4_u7IjgOsxfy",
+    "dishes": [
+      {
+        "name": "Son of a Bun",
+        "tags": ["premium", "heavy", "filling"],
+        "price_range": "high",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten", "dairy", "eggs"]
+        }
+      },
+      {
+        "name": "Steak 'n' Cheese",
+        "tags": ["savory", "premium", "cozy"],
+        "price_range": "high",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten", "dairy"]
+        }
+      },
+      {
+        "name": "Curly Fries",
+        "tags": ["quick", "sharing", "comfort"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": true,
+          "is_vegetarian": true,
+          "allergens": []
+        }
+      }
+    ]
+  },
+  {
+    "restaurant": "Wrap Lab",
+    "link": "https://www.foodpanda.pk/restaurant/uint/wrap-lab-f11",
+    "dishes": [
+      {
+        "name": "Grilled Chicken Wrap",
+        "tags": ["healthy", "light", "quick"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten"]
+        }
+      },
+      {
+        "name": "Falafel Wrap",
+        "tags": ["healthy", "savory", "light"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": true,
+          "is_vegetarian": true,
+          "allergens": ["gluten"]
+        }
+      },
+      {
+        "name": "Tandoori Wrap",
+        "tags": ["spicy", "quick", "filling"],
+        "price_range": "medium",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["gluten"]
+        }
+      }
+    ]
+  },
+  {
+    "restaurant": "Savour Foods",
+    "link": "https://www.foodpanda.pk/restaurant/v6gt/savour-foods-blue-area?srsltid=AfmBOootjfdQLQR-AE07ymPyHF9IY2isCgbcEFkzubDpTNixtz30wLH0",
+    "dishes": [
+      {
+        "name": "Chicken Pulao Kebab",
+        "tags": ["comfort", "filling", "cheap"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": []
+        }
+      },
+      {
+        "name": "Shami Kebab",
+        "tags": ["savory", "quick", "cheap"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": false,
+          "is_vegetarian": false,
+          "allergens": ["eggs"]
+        }
+      },
+      {
+        "name": "Zarda",
+        "tags": ["sweet", "light", "sharing"],
+        "price_range": "low",
+        "dietary": {
+          "is_halal": true,
+          "is_vegan": true,
+          "is_vegetarian": true,
+          "allergens": ["nuts"]
+        }
+      }
+    ]
+  },
+  {
     "restaurant": "Monal Restaurant",
     "link": "https://www.foodpanda.pk/restaurant/monal",
     "dishes": [
